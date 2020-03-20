@@ -1,0 +1,93 @@
+[
+    {
+        "code": "000001",
+        "description": "Arroz",
+        "price": 15.00,
+        "availQty": 10,
+        "imageUrl": "https://www.pomardelivery.com.br/imagens/produtos/view/2219.jpg"
+    },
+    {
+        "code": "000002",
+        "description": "Feijão",
+        "price": 3.50,
+        "availQty": 10,
+        "imageUrl": "https://www.extraplus.com.br/uploads/produtos/350x350/9071_7896101062015.JPG"
+    },
+    {
+        "code": "000003",
+        "description": "Macarrão",
+        "price": 2.65,
+        "availQty": 10,
+        "imageUrl": "https://marketup-cdn.s3.amazonaws.com/files/135488/products/03e7f7d8-e142-4c5a-9060-4b38b10ec542.jpeg"
+    },
+    {
+        "code": "000004",
+        "description": "Batata",
+        "price": 3.99,
+        "availQty": 10,
+        "imageUrl": "https://muffatosupermercados.vteximg.com.br/arquivos/ids/246528-400-400/0000000003537.jpg?v=636814253482330000"
+    },
+    {
+        "code": "000005",
+        "description": "Tomate",
+        "price": 4.69,
+        "availQty": 10,
+        "imageUrl": "https://www.sondadelivery.com.br/img.aspx/sku/1548328/530/1548328.JPG"
+    },
+    {
+        "code": "000006",
+        "description": "Banana",
+        "price": 3.80,
+        "availQty": 10,
+        "imageUrl": "https://cdn.awsli.com.br/600x450/334/334766/produto/18042410/098cf4a69b.jpg"
+    },
+    {
+        "code": "000007",
+        "description": "Laranja",
+        "price": 2.50,
+        "availQty": 10,
+        "imageUrl": "https://static3.tcdn.com.br/img/img_prod/450860/muda_de_laranja_bahia_laranja_umbigo_496_2_20190611093556.jpg"
+    },
+    {
+        "code": "000008",
+        "description": "Suco de Uva Integral",
+        "price": 15.50,
+        "availQty": 10,
+        "imageUrl": "https://casafiesta.fbitsstatic.net/img/p/suco-de-uva-tinto-integral-alianca-sem-adicao-de-acucar-1-5l-69541/236410.jpg?w=420&h=420&v=no-change"
+    },
+    {
+        "code": "000009",
+        "description": "Açucar",
+        "price": 2.89,
+        "availQty": 10,
+        "imageUrl": "https://assets.xtechcommerce.com/uploads/images/medium/fd43a91b3a05bcc6b7131444b86f560d.jpg"
+    },
+    {
+        "code": "000010",
+        "description": "Café",
+        "price": 8.75,
+        "availQty": 10,
+        "imageUrl": "https://www.paodeacucar.com/img/uploads/1/191/603191x200x200.jpg"
+    },
+    {
+        "code": "000011",
+        "description": "Alho",
+        "price": 19.90,
+        "availQty": 10,
+        "imageUrl": "https://statics.angeloni.com.br/super/files/produtos/1475278/1475278_1_large.jpg"
+    },
+    {
+        "code": "000012",
+        "description": "Cebola",
+        "price": 2.99,
+        "availQty": 10,
+        "imageUrl": "https://cdn.awsli.com.br/600x450/672/672161/produto/288848769842941153.jpg"
+    },
+    {
+        "code": "000013",
+        "description": "Pão de forma",
+        "price": 3.99,
+        "availQty": 10,
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9daOhAdDwz5UxapMl1Ek2eLR7HOOGIXk3Pc4l1F3Z-zTi3FuV"
+    }
+]
