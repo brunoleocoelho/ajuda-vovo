@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { StyleSheet, Text, View, ScrollView, FlatList, } from 'react-native'
 
-import Header from '../components/Header';
+import Header from '../components/Header/Header';
 
 import { colorTheme, stdFontSizes } from '../util/constants';
 
@@ -43,6 +43,7 @@ const CriarLista = () => {
                 title={'Criar Lista'}
                 titleColor={'#FFF'}
                 titleAlign={'left'} 
+                titlePosition={'left'}
                 backgroundColor={colorTheme} 
             />
 
