@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native'
 // Icon info: https://react-native-elements.github.io/react-native-elements/docs/icon.html
 import { Icon, Button } from 'react-native-elements'
 
-/** Renderiza apenas ícones de ação para o lado direito do Header */
+/** Renderiza apenas ícones de ação para o lado direito do CustomHeader */
 const RightSide = (props) => {
     const { 
         titleColor,

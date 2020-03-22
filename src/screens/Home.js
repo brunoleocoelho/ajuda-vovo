@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { StyleSheet, Text, View, ScrollView, FlatList, } from 'react-native'
 
-import Header from '../components/Header/Header';
+import CustomHeader from '../components/CustomHeader/CustomHeader';
 
 /** Home screen for the app */
 const Home = () => {
 
     return (
         <View  style={styles.mainContainer}>
-            <Header 
+            {/* //TODO: Header customizado substituir pelo header do react native elements */}
+            <CustomHeader 
                 title={'Home'}
             />
 
