@@ -1,8 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import Home from './src/screens/Home';
-import CriarLista from './src/screens/CriarLista';
+import ListaScreen from './src/screens/ListaScreen';
 
 /*
   COMPONENTE PONTO DE PARTIDA DO APP, QUE SERÁ 
@@ -15,7 +14,7 @@ import CriarLista from './src/screens/CriarLista';
 export default function App() {
 
   return (
-    <CriarLista />
+    <ListaScreen />
   );
 }
 

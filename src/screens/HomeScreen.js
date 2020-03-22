@@ -3,8 +3,8 @@ import { StyleSheet, Text, View, ScrollView, FlatList, } from 'react-native'
 
 import CustomHeader from '../components/CustomHeader/CustomHeader';
 
-/** Home screen for the app */
-const Home = () => {
+/** HomeScreen screen for the app */
+const HomeScreen = () => {
 
     return (
         <View  style={styles.mainContainer}>
@@ -35,4 +35,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default Home
+export default HomeScreen

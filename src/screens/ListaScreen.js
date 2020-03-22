@@ -9,8 +9,8 @@ import feedList from '../data/product-list.json'; //lista Mock de produtos
 import ProdutosLista from '../components/ProdutosLista';
 
 
-/** CriarLista screen for the app */
-const CriarLista = () => {
+/** ListaScreen screen for the app */
+const ListaScreen = () => {
 
     // STATE
     const [selected, setSelected] = useState([]);
@@ -73,4 +73,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default CriarLista;
+export default ListaScreen;
