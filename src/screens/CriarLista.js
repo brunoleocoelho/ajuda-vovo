@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { StyleSheet, Text, View, ScrollView, FlatList, } from 'react-native'
 
-import Header from '../components/Header';
+import Header from '../components/Header/Header';
 
-import { colorTheme, stdFontSizes } from '../util/constants';
+import { stdFontSizes } from '../util/constants';
 
 import feedList from '../data/product-list.json'; //lista Mock de produtos
 import ProdutosLista from '../components/ProdutosLista';
@@ -30,7 +30,7 @@ const CriarLista = () => {
 
         const newTotal = newSelected.reduce((prvVal, curVal) => (prvVal + curVal.price), 0);
 
-        console.log("SELECTED", newSelected);
+        // console.log("SELECTED", newSelected);
         Promise.all([
             setSelected(newSelected),
             setTotalRS(newTotal)
@@ -41,9 +41,8 @@ const CriarLista = () => {
         <View  style={styles.mainContainer}>
             <Header 
                 title={'Criar Lista'}
-                titleColor={'#FFF'}
-                titleAlign={'left'} 
-                backgroundColor={colorTheme} 
+                leftProps = {{ icon: 'menu', action: () => alert('RIGHT TAPPED!!!') }}
+                rightProps = {{ icon: 'more-vert', action: () => alert('RIGHT TAPPED!!!') }}
             />
 
             <Text style={styles.totalizador}>{`Selecionados: ${selected.length}  Total R$ ${totalRS.toFixed(2) || 0}`}</Text>

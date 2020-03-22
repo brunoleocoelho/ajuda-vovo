@@ -1,5 +1,8 @@
-
-export const colorTheme = '#232340';
+/** Core padrões de fundo e fontes de componentes*/
+export const headerColorTheme = {
+    backgroundColor: '#232340',
+    color: 'white'
+};
 
 /** Tamanhos padrões das fontes */
 export const stdFontSizes = {

@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { StyleSheet, Text, View, ScrollView, FlatList, } from 'react-native'
 
-import Header from '../components/Header';
-
-import { colorTheme } from '../util/constants';
+import Header from '../components/Header/Header';
 
 /** Home screen for the app */
 const Home = () => {
@@ -12,10 +10,8 @@ const Home = () => {
         <View  style={styles.mainContainer}>
             <Header 
                 title={'Home'}
-                titleColor={'#FFF'}
-                titleAlign={'left'} 
-                backgroundColor={colorTheme} 
             />
+
             <View style={styles.bodyContainer}>
                 <Text>HOME SCREEN</Text>
             </View>
