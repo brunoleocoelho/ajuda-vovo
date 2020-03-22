@@ -4,7 +4,7 @@ import { Icon, Button } from 'react-native-elements'
 
 import { stdFontSizes } from '../../util/constants'
 
-/** Renderiza texto, ou ícones para o lado esquerdo do Header */
+/** Renderiza texto, ou ícones para o lado esquerdo do CustomHeader */
 const LeftSide = (props) => {
     const { 
         title,

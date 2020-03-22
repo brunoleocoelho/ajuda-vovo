@@ -8,8 +8,8 @@ import LeftSide from './LeftSide'
 import RightSide from './RightSide'
 
 
-/** Responsável pela renderização de um header */
-const Header = (props) => {
+/** Responsável pela renderização de um CustomHeader */
+const CustomHeader = (props) => {
     // PROPS (valores default se itens não passados)
     const { 
         title, 
@@ -61,7 +61,7 @@ const Header = (props) => {
 
 
 // PROPTYPES
-Header.propTypes = {
+CustomHeader.propTypes = {
     /** Titulo a ser exibido (required) */
     title: PropTypes.string.isRequired,
     
@@ -73,13 +73,13 @@ Header.propTypes = {
      * @default 'white' */
     titleColor: PropTypes.string,
 
-    /** Cor de fundo do header
+    /** Cor de fundo do CustomHeader
      * @default '#232340' */
     backgroundColor: PropTypes.string,
 
     /** Props para botão do lado esquerdo contendo action e icon */
     leftProps: PropTypes.shape({
-        /** Function a ser executada pelo botão do lado esquerdo do header */
+        /** Function a ser executada pelo botão do lado esquerdo do CustomHeader */
         action: PropTypes.func.isRequired,
         /** Icone a ser exibido no botão */
         icon: PropTypes.oneOf().isRequired
@@ -87,7 +87,7 @@ Header.propTypes = {
 
     /** Props para botão do lado direito contendo action e icon */
     rightProps: PropTypes.shape({
-        /** Function a ser executada pelo botão do lado direito do header */
+        /** Function a ser executada pelo botão do lado direito do CustomHeader */
         action: PropTypes.func.isRequired,
         /** Icone a ser exibido no botão */
         icon: PropTypes.oneOf().isRequired
@@ -119,4 +119,4 @@ const styles = StyleSheet.create({
 })
 
 
-export default Header;
+export default CustomHeader;
