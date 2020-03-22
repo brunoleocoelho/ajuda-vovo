@@ -8,6 +8,7 @@ const Home = () => {
 
     return (
         <View  style={styles.mainContainer}>
+            {/* //TODO: Header customizado substituir pelo header do react native elements */}
             <CustomHeader 
                 title={'Home'}
             />

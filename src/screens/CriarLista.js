@@ -39,6 +39,7 @@ const CriarLista = () => {
 
     return (
         <View  style={styles.mainContainer}>
+            {/* //TODO: Header customizado substituir pelo header do react native elements */}
             <CustomHeader 
                 title={'Criar Lista'}
                 leftProps = {{ icon: 'menu', action: () => alert('RIGHT TAPPED!!!') }}
