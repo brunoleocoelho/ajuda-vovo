@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { View, Text, StyleSheet } from 'react-native'
 
-import { headerColorTheme, stdFontSizes } from '../../util/constants'
+import { stdFontSizes, headerColorTheme } from '../../util/constants'
 
 import LeftSide from './LeftSide'
 import RightSide from './RightSide'

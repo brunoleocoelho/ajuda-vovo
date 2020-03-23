@@ -8,18 +8,22 @@ const HomeScreen = (props) => {
 
     console.log("--- HomeScreen props: ", props);
 
-    const { navigation } = props;
+    const { navigation, user } = props;
+
+    const goAhead =() => {
+        navigation.navigate('ListaScreen', {user})
+    }
 
     return (
         <View  style={styles.mainContainer}>
             {/* //TODO: Header customizado substituir pelo header do react native elements */}
             <CustomHeader 
-                title={'Home'}
+                title={user.userName}
             />
 
             <View style={styles.bodyContainer}>
                 <Text>HOME SCREEN</Text>
-                <Button title="Go Lista" onPress={() => navigation.navigate('ListaScreen')} />
+                <Button title="Go Lista" onPress={goAhead} />
             </View>
         </View>
     )
@@ -33,8 +37,8 @@ const styles = StyleSheet.create({
         paddingTop: 80,
     },
     bodyContainer: {
-        backgroundColor: '#CECECE',
         textAlign: 'center',
+        padding: 10
     },
 
 

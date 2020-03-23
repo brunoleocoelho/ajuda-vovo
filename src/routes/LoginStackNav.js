@@ -14,10 +14,12 @@ const LoginStackNav = (props) => {
     const { authToken } = props;
     
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [user, setUser] = useState({username:''})
 
     // if (!authToken) return <LoginScreen />
-    const goLogIn = () => {
-        setIsLoggedIn(!isLoggedIn)
+    const continueLoggedIn = (user) => {
+        setUser(user);
+        setIsLoggedIn(!isLoggedIn);
     }
     
     return (
@@ -25,13 +27,15 @@ const LoginStackNav = (props) => {
             { !isLoggedIn 
                 ? (
                     <Stack.Screen name="Loginscreen">
-                        {props => <LoginScreen {...props} logIn={goLogIn} />}
+                        { props => <LoginScreen {...props} setUser={continueLoggedIn} />}
                     </Stack.Screen>
                 )
                 : (
                     <>
-                    <Stack.Screen name="Homescreen" component={HomeScreen} />
-                    <Stack.Screen name="ListaScreen" component={ListaScreen} />
+                        <Stack.Screen name="Homescreen">
+                            { props => <HomeScreen {...props} user={user} /> }
+                        </Stack.Screen>
+                        <Stack.Screen name="ListaScreen" component={ListaScreen} />
                     </>
                 )
             }

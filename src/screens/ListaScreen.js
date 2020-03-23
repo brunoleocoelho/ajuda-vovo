@@ -13,6 +13,8 @@ import ProdutosLista from '../components/ProdutosLista';
 const ListaScreen = (props) => {
 
     console.log("--- ListaScreen props: ", props);
+    const { route } = props;
+    const { user } = route.params
 
     // STATE
     const [selected, setSelected] = useState([]);
@@ -43,7 +45,7 @@ const ListaScreen = (props) => {
         <View  style={styles.mainContainer}>
             {/* //TODO: Header customizado substituir pelo header do react native elements */}
             <CustomHeader 
-                title={'Criar Lista'}
+                title={'Criar Lista' + (user ? ' - '+ user.userName : '')}
                 leftProps = {{ icon: 'menu', action: () => alert('RIGHT TAPPED!!!') }}
                 rightProps = {{ icon: 'more-vert', action: () => alert('RIGHT TAPPED!!!') }}
             />

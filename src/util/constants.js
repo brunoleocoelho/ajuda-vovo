@@ -1,4 +1,4 @@
-/** Core padrões de fundo e fontes de componentes*/
+/** Cores padrões de fundo e fontes de componentes*/
 export const headerColorTheme = {
     backgroundColor: '#232340',
     color: 'white'
@@ -12,4 +12,19 @@ export const stdFontSizes = {
     medium: 20,
     small: 14,
     xSmall: 10,
-}
+};
+
+/** Temas light e dark para implementação */
+export const customTheme = {
+    light: {
+        foreground: '#000000',
+        background: '#eeeeee',
+        headerColorTheme
+    },
+    dark: {
+        foreground: '#ffffff',
+        background: '#222222',
+        headerColorTheme
+    },
+    
+};
