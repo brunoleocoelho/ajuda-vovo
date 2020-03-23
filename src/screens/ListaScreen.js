@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { StyleSheet, Text, View, ScrollView, FlatList, } from 'react-native'
 
-import CustomHeader from '../components/CustomHeader/CustomHeader';
-
 import { stdFontSizes } from '../util/constants';
 
 import feedList from '../data/product-list.json'; //lista Mock de produtos
@@ -43,14 +41,10 @@ const ListaScreen = (props) => {
 
     return (
         <View  style={styles.mainContainer}>
-            {/* //TODO: Header customizado substituir pelo header do react native elements */}
-            <CustomHeader 
-                title={'Criar Lista' + (user ? ' - '+ user.userName : '')}
-                leftProps = {{ icon: 'menu', action: () => alert('RIGHT TAPPED!!!') }}
-                rightProps = {{ icon: 'more-vert', action: () => alert('RIGHT TAPPED!!!') }}
-            />
-
-            <Text style={styles.totalizador}>{`Selecionados: ${selected.length}  Total R$ ${totalRS.toFixed(2) || 0}`}</Text>
+            <Text style={styles.title}>{'Criar Lista' + (user ? ' - '+ user.userName : '')}</Text>
+            <Text style={styles.totalizador}>
+                {`Selecionados: ${selected.length}  Total R$ ${totalRS.toFixed(2) || 0}`}
+            </Text>
             
             <View style={styles.bodyContainer}>
                 <ProdutosLista produtos={feedList} actionSelect={handleSelected} />
@@ -64,11 +58,14 @@ const styles = StyleSheet.create({
     mainContainer: {
         flex: 1,
         justifyContent: 'flex-start',
-        paddingTop: 80,
     },
     bodyContainer: {
         backgroundColor: '#CECECE',
         textAlign: 'center',
+    },
+    title: {
+        textAlign: 'center',
+        fontSize: stdFontSizes.xLarge,
     },
     totalizador: {
         textAlign: 'center',

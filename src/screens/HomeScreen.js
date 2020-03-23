@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { StyleSheet, Text, View, Button, ScrollView, FlatList, } from 'react-native'
 
-import CustomHeader from '../components/CustomHeader/CustomHeader';
-
 /** HomeScreen screen for the app */
 const HomeScreen = (props) => {
 
@@ -16,15 +14,8 @@ const HomeScreen = (props) => {
 
     return (
         <View  style={styles.mainContainer}>
-            {/* //TODO: Header customizado substituir pelo header do react native elements */}
-            <CustomHeader 
-                title={user.userName}
-            />
-
-            <View style={styles.bodyContainer}>
-                <Text>HOME SCREEN</Text>
-                <Button title="Go Lista" onPress={goAhead} />
-            </View>
+            <Text>HOME SCREEN {user.userName}</Text>
+            <Button title="Go Lista" onPress={goAhead} />
         </View>
     )
 }
@@ -34,13 +25,8 @@ const styles = StyleSheet.create({
     mainContainer: {
         flex: 1,
         justifyContent: 'flex-start',
-        paddingTop: 80,
+        padding: 12
     },
-    bodyContainer: {
-        textAlign: 'center',
-        padding: 10
-    },
-
 
 })
 
