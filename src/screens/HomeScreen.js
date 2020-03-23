@@ -8,14 +8,20 @@ const HomeScreen = (props) => {
 
     const { navigation, user } = props;
 
-    const goAhead =() => {
+    const goAhead = () => {
         navigation.navigate('ListaScreen', {user})
     }
 
+    const titulo = `HOME SCREEN ${user.userName}`;
+    
     return (
         <View  style={styles.mainContainer}>
-            <Text>HOME SCREEN {user.userName}</Text>
+            <Text>{titulo}</Text>
             <Button title="Go Lista" onPress={goAhead} />
+            <Button
+                title="Update the title"
+                onPress={() => navigation.setOptions({ title: 'Updated!' })}
+            />
         </View>
     )
 }
