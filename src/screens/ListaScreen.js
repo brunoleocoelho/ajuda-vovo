@@ -10,7 +10,9 @@ import ProdutosLista from '../components/ProdutosLista';
 
 
 /** ListaScreen screen for the app */
-const ListaScreen = () => {
+const ListaScreen = (props) => {
+
+    console.log("--- ListaScreen props: ", props);
 
     // STATE
     const [selected, setSelected] = useState([]);
