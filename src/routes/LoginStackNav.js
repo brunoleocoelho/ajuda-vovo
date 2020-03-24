@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { createStackNavigator } from '@react-navigation/stack'
 
 // Screens
+import LoginScreen from '../screens/LoginScreen';
+import PreFormScreen from '../screens/PreFormScreen';
+import FormPrecisoAjuda from '../screens/FormPrecisoAjuda';
+import FormVouAjudar from '../screens/FormVouAjudar';
 import HomeScreen from '../screens/HomeScreen';
 import ListaScreen from '../screens/ListaScreen';
-import LoginScreen from '../screens/LoginScreen';
 
 import { headerColorTheme } from '../util/constants';
 
@@ -26,12 +29,33 @@ const LoginStackNav = (props) => {
     /** Cria a chamada do Login */
     const renderLoginScreen = () => {
         return (
-            <Stack.Screen 
-                name="Loginscreen" 
-                options={{ title: 'Login' }}
-            >
-                { props => <LoginScreen {...props} setUser={continueLogInOut} />}
-            </Stack.Screen>
+            <>
+                <Stack.Screen 
+                    name="Loginscreen" 
+                    options={{ title: 'Login' }}
+                >
+                    { props => <LoginScreen {...props} setUser={continueLogInOut} />}
+                </Stack.Screen>
+
+                <Stack.Screen 
+                    name="PreFormScreen" 
+                    options={{ title: 'Ajuda Vovô' }}
+                >
+                    { props => <PreFormScreen {...props} user={user} logOut={continueLogInOut} /> }
+                </Stack.Screen>
+
+                <Stack.Screen 
+                    name="FormPrecisoAjuda" 
+                    component={FormPrecisoAjuda} 
+                    options={{ title: 'Formulário do Idoso'}}
+                />
+                
+                <Stack.Screen 
+                    name="FormVouAjudar" 
+                    component={FormVouAjudar} 
+                    options={{ title: 'Formulário do Ajudante' }}
+                />
+            </>
         )
     }
     
@@ -59,7 +83,7 @@ const LoginStackNav = (props) => {
     // MAIN RENDER
     return (
         <Stack.Navigator 
-            initialRouteName={'Homescreen'}
+            initialRouteName={'Loginscreen'}
             screenOptions={{...standardHeaderTheme}}
         >
             { !isLoggedIn 

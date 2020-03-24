@@ -1,60 +1,49 @@
 import React, { useState, useEffect } from 'react'
-import { StyleSheet, Text, View, ScrollView, FlatList, } from 'react-native'
+import { StyleSheet, Text, View, Alert } from 'react-native'
 import { Button } from 'react-native-elements'
 
-import { headerColorTheme, stdFontSizes } from '../util/constants'
+import { headerColorTheme, stdFontSizes, textoInicial, perguntaInicial, avisoLegal } from '../util/constants'
 
-/** HomeScreen screen for the app */
-const HomeScreen = (props) => {
+/** PreFormScreen screen for the app */
+const PreFormScreen = (props) => {
 
-    console.log("--- HomeScreen props: ", props);
-    const { navigation, user, logOut } = props;
+    console.log("--- PreFormScreen props: ", props);
+    const { navigation } = props;
 
-    // Definindo botão direito do header
-    // navigation && navigation.setOptions({
-    //     headerRight: () => (
-    //         <Button 
-    //             title={'Sair'}
-    //             titleStyle={{ color: 'white'}}
-    //             icon={{ name: 'power-settings-new', color: 'white' }} 
-    //             type='clear' 
-    //             containerStyle={{ backgroundColor:'transparent' }} 
-    //             onPress={() => logOut(null)}
-    //         />
-    //     ),
-    // })
-
-    const goAhead = () => {
-        navigation && navigation.navigate('ListaScreen', {user})
+    // Functions
+    const goNeedHelp = () => {
+        navigation && navigation.navigate('FormPrecisoAjuda')
     }
 
-    const updateTitle = () => {
-        user && navigation.setOptions({ title: String(user.userName).toUpperCase() })
+    const goWillHelp = () => {
+        navigation && navigation.navigate('FormVouAjudar')
+    }
+
+    const showLawAdvise = () => {
+        Alert.alert('Aviso Legal', avisoLegal)
     }
 
     // Propriedades aplicadas a tela
     // `${user ? 'Olá '+ user.userName +'! \n' : ''}`
-    const textoInicial = 'O app \'Ajuda Vovô\' foi criado para ajudar idosos a enfrentar a pandemia do corona vírus (COVID-19), e conectar pessoas que estão dispostas a ajudá-los de alguma forma, para que não precisem sair de casa!'
-    + '\n\nPara começar, como deseja participar?';
     
     const botoes = [
         {   
-            title: 'Preciso de Ajuda',
+            title: 'Sou idoso, preciso de ajuda',
             icon: 'warning',
-            action: goAhead,
-            background: '#EEBB00'
+            action: goNeedHelp,
+            background: '#EEAA22'
         },
         {   
-            title: 'Quero Ajudar',
+            title: 'Quero ajudar idosos',
             icon: 'pan-tool',
-            action: updateTitle,
-            background: 'green'
+            action: goWillHelp,
+            background: '#228822'
         },
     ];
     
     return (
         <View  style={styles.mainContainer}>
-            <Text style={styles.textoInicial}>{textoInicial}</Text>
+            <Text style={styles.textoInicial}>{textoInicial + perguntaInicial}</Text>
 
             { botoes.map( (btn, idx) => {
                 const estilo = [ styles.buttonStyle, {backgroundColor: btn.background} ]
@@ -71,6 +60,14 @@ const HomeScreen = (props) => {
                 )
             }) }
 
+            <View style={styles.footerContainer}>
+                <Button 
+                    type='clear'
+                    title='Aviso Legal e Direitos' 
+                    titleStyle={styles.avisoLegalText} 
+                    onPress={showLawAdvise}
+                />
+            </View>
         </View>
     )
 }
@@ -82,12 +79,16 @@ const styles = StyleSheet.create({
         // justifyContent: 'center',
         padding: 12
     },
+
+    // Texto apresentado
     textoInicial: {
         textAlign: 'center',
         color: headerColorTheme.backgroundColor,
         fontSize: stdFontSizes.large,
         marginVertical: 12,
     },
+
+    // Botões principais
     buttonContainer: {
         marginVertical: 4
     },
@@ -98,8 +99,18 @@ const styles = StyleSheet.create({
         backgroundColor: headerColorTheme.backgroundColor,
         borderRadius: 8,
         padding: 20,
-        
-    }
+    },
+
+    // botão de aviso legal rodapé
+    footerContainer: {
+        position: 'absolute', 
+        bottom:0, 
+        alignSelf: 'center'
+    },
+    avisoLegalText: {
+        color:'#888', 
+        // fontSize: 14
+    },
 })
 
-export default HomeScreen
+export default PreFormScreen

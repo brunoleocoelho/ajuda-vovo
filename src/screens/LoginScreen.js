@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { 
     View, StyleSheet, Text, TextInput, 
-    TouchableOpacity, KeyboardAvoidingView, Image 
+    TouchableOpacity, KeyboardAvoidingView, Image, Alert 
 } from 'react-native'
 import { Button } from 'react-native-elements'
 
-import { stdFontSizes, headerColorTheme } from '../util/constants';
+import { stdFontSizes, headerColorTheme, textoInicial } from '../util/constants';
 
 const LoginScreen = (props) => {
     // PROPS
@@ -27,12 +27,32 @@ const LoginScreen = (props) => {
         }
     }
 
-    /** Vai para tela de cadastro */
-    const goFormRegister = () => {
-        //navigation && navigation.navigate()
+    /** About estilo 'Help' simples */
+    const showAbout = () => {
+        Alert.alert( 'Sobre este app', textoInicial )
     }
 
+    /** Vai para tela de cadastro */
+    const goFormRegister = () => {
+        navigation && navigation.navigate('PreFormScreen')
+    }
+
+    // Propriedades e Opções 
     const imgVovo = require('../../assets/vovo-face.png');
+
+    // Definindo botão direito do header
+    navigation && navigation.setOptions({
+        headerRight: () => (
+            <Button 
+                // title='Sobre'
+                titleStyle={{ color: 'white'}}
+                icon={{ name: 'help-outline', color: 'white' }} 
+                type='clear' 
+                containerStyle={{ backgroundColor:'transparent' }} 
+                onPress={showAbout}
+            />
+        ),
+    })
 
     return (
         <KeyboardAvoidingView 
@@ -48,7 +68,7 @@ const LoginScreen = (props) => {
             <View style={styles.formContainer}>
                 <TextInput
                     style={styles.input}
-                    placeholder='Username ou E-mail'
+                    placeholder='Usuário ou E-mail'
                     val={userName}
                     onChangeText={setUserName}
                     keyboardType='email-address'
@@ -58,7 +78,7 @@ const LoginScreen = (props) => {
 
                 <TextInput 
                     style={styles.input}
-                    placeholder='Password'
+                    placeholder='Senha'
                     val={pw}
                     onChangeText={setPW}
                     keyboardType='default'
@@ -115,7 +135,7 @@ const styles = StyleSheet.create({
     input: {
         borderStyle: 'solid',
         borderWidth: 1,
-        borderColor: '#CCC',
+        borderColor: '#AAA',
         backgroundColor: '#FFF',
         padding: 8,
         marginVertical: 8,

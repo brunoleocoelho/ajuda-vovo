@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native'
 const CadastroScreen = () => {
     return (
         <View>
-            <Text> Cadastro </Text>
+            <Text> Cadastro Vou ajudar </Text>
         </View>
     )
 }
