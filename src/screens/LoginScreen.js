@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
-import { View, StyleSheet, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, Image } from 'react-native'
+import { 
+    View, StyleSheet, Text, TextInput, 
+    TouchableOpacity, KeyboardAvoidingView, Image 
+} from 'react-native'
+import { Button } from 'react-native-elements'
+
 import { stdFontSizes, headerColorTheme } from '../util/constants';
 
 const LoginScreen = (props) => {
@@ -12,6 +17,7 @@ const LoginScreen = (props) => {
     const [pw, setPW] = useState('');
 
     // Functions
+    /** Efetua a entrada no app */
     const doLogin = () => {
         if (userName.length && pw.length) {
             props.setUser({userName});
@@ -19,6 +25,11 @@ const LoginScreen = (props) => {
         else {
             alert('Usuário e senha devem ser preenchidos!')
         }
+    }
+
+    /** Vai para tela de cadastro */
+    const goFormRegister = () => {
+        //navigation && navigation.navigate()
     }
 
     const imgVovo = require('../../assets/vovo-face.png');
@@ -42,7 +53,7 @@ const LoginScreen = (props) => {
                     onChangeText={setUserName}
                     keyboardType='email-address'
                     autoCapitalize='none'
-                    autoFocus 
+                    // autoFocus 
                 />
 
                 <TextInput 
@@ -59,8 +70,16 @@ const LoginScreen = (props) => {
                     onPress={doLogin} 
                     style={styles.buttonLogin}
                 >
-                    <Text style={styles.buttonText}>Login</Text> 
+                    <Text style={styles.buttonText}>Entrar</Text> 
                 </TouchableOpacity>
+
+                <Button 
+                    type='clear'
+                    title='Ainda não sou cadstrado'
+                    containerStyle={ styles.clearButtonContainer }
+                    titleStyle={ styles.clearButtonText } 
+                    onPress={goFormRegister}
+                />
             </View>
      
         </KeyboardAvoidingView>
@@ -72,16 +91,15 @@ const styles = StyleSheet.create({
         flex: 1, 
         justifyContent: 'flex-start',
     },
+
+    // logo e texto
     titleContainer: {
         alignItems: 'center',
         padding: 12,
     },
-    formContainer: {
-        padding: 12,
-    },
     vovoImage: {
-        width: 160,
-        height: 160,
+        width: 140,
+        height: 140,
         margin: 4,
     },
     textTitle: {
@@ -89,24 +107,42 @@ const styles = StyleSheet.create({
         color: headerColorTheme.backgroundColor,
         fontWeight: 'bold',
     },
+
+    // Inputs
+    formContainer: {
+        padding: 12,
+    },
     input: {
         borderStyle: 'solid',
         borderWidth: 1,
         borderColor: '#CCC',
         backgroundColor: '#FFF',
-        padding: 12,
+        padding: 8,
         marginVertical: 8,
-        borderRadius: 4
+        borderRadius: 8,
+        fontSize: stdFontSizes.xLarge
     },
+
+    // botão de entrar
     buttonLogin: {
         padding: 12, 
         backgroundColor: headerColorTheme.backgroundColor,
-        borderRadius: 4
+        borderRadius: 8
     },
     buttonText: {
         color: headerColorTheme.color,
         textAlign: 'center',
         fontSize: stdFontSizes.xLarge
+    }, 
+
+    // botão de não sou cadastrado
+    clearButtonContainer: {
+        marginVertical: 12
+    },
+    clearButtonText: {
+        fontSize: stdFontSizes.large,
+        color: 'red',
+        textDecorationLine: 'underline',
     }
 })
 

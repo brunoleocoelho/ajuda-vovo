@@ -18,7 +18,7 @@ const LoginStackNav = (props) => {
     const [user, setUser] = useState({username:''})
 
     /** Continua a partir do login (in or out) */
-    const continueLoggedIn = (user) => {
+    const continueLogInOut = (user) => {
         setUser(user);
         setIsLoggedIn(!isLoggedIn);
     }
@@ -28,12 +28,9 @@ const LoginStackNav = (props) => {
         return (
             <Stack.Screen 
                 name="Loginscreen" 
-                options={{ 
-                    title: 'Login',
-                    ...standardHeaderTheme
-                }}
+                options={{ title: 'Login' }}
             >
-                { props => <LoginScreen {...props} setUser={continueLoggedIn} />}
+                { props => <LoginScreen {...props} setUser={continueLogInOut} />}
             </Stack.Screen>
         )
     }
@@ -45,19 +42,15 @@ const LoginStackNav = (props) => {
                 <Stack.Screen 
                     name="Homescreen" 
                     options={{ 
-                        title: 'Ajuda Vovô - HOME',
-                        ...standardHeaderTheme
+                        title: 'Ajuda Vovô',
                     }}
                 >
-                    { props => <HomeScreen {...props} user={user} /> }
+                    { props => <HomeScreen {...props} user={user} logOut={continueLogInOut} /> }
                 </Stack.Screen>
 
                 <Stack.Screen 
                     name="ListaScreen" 
                     component={ListaScreen}
-                    options={{
-                        ...standardHeaderTheme
-                    }} 
                 />
             </>
         )
@@ -65,7 +58,10 @@ const LoginStackNav = (props) => {
 
     // MAIN RENDER
     return (
-        <Stack.Navigator initialRouteName={'Homescreen'}>
+        <Stack.Navigator 
+            initialRouteName={'Homescreen'}
+            screenOptions={{...standardHeaderTheme}}
+        >
             { !isLoggedIn 
                 ? renderLoginScreen()
                 : renderHomeStack()
