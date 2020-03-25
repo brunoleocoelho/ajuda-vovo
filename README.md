@@ -82,7 +82,7 @@ Para execução do projeto, siga as instruções:
 
 > `npm start`: Este comando executa a aplicação em si em 'development mode'.
 
-
+> Existe uma ferramenta do Expo chamada [Snack](https://snack.expo.io/) que permite testar e executar diversas funcionalidade através do navegador de internet. Nela há um emulador embutido para Android e iOS, com as mesmas características dos emuladores reais. Fica sendo uma boa opção para desenvolvimento avulso de determinados componentes. 
 
 ------------------------
 ### Informações e referências:
